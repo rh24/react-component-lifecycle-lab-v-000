@@ -1,6 +1,6 @@
 import React from 'react';
 import Tweet from './Tweet';
-
+// how can I inspect what the props of my components are?
 class TweetWall extends React.Component {
   constructor(props) {
     super(props);
@@ -16,8 +16,8 @@ class TweetWall extends React.Component {
     });
   }
 
-  shouldComponentUpdate(prevProps, prevState) {
-    return (this.state.tweets.length > prevState.tweets.length);
+  shouldComponentUpdate(nextProps, nextState) {
+    return nextProps.newTweets.length > 0;
   }
 
   componentWillReceiveProps(nextProps, nextState) {
